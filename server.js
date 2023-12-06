@@ -21,6 +21,13 @@ app.get('/greeting', function (req, res) {
 app.get('/greeting/:name', function(req, res) {
     res.send(' wow ! hello there,' + req.params.name );
 })
+
+app.get('/tip/:total/:tipPercentage', (req, res) => {
+	console.log(req.params);
+	res.send('TIP:' + req.params.total * req.params.tipPercentage/100);
+});
+
+
 // Tell the app to listen on port 3000
 // for HTTP requests from clients
 app.listen(3000, function () {
